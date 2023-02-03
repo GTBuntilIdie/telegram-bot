@@ -10,10 +10,10 @@ import java.util.Objects;
 public class NotificationTask {
     @Id
     @GeneratedValue
-    private long id;
+    private Long id;
     private long chatId;
     private String messageText;
-    private LocalDateTime MessageSentTime;
+    private LocalDateTime messageSentTime;
 
     public NotificationTask() {
     }
@@ -21,7 +21,7 @@ public class NotificationTask {
     public NotificationTask(long chatId, String messageText, LocalDateTime messageSentTime) {
         this.chatId = chatId;
         this.messageText = messageText;
-        MessageSentTime = messageSentTime;
+        messageSentTime = messageSentTime;
     }
 
     public long getId() {
@@ -37,7 +37,19 @@ public class NotificationTask {
     }
 
     public LocalDateTime getMessageSentTime() {
-        return MessageSentTime;
+        return messageSentTime;
+    }
+
+    public void setChatId(long chatId) {
+        this.chatId = chatId;
+    }
+
+    public void setMessageText(String messageText) {
+        this.messageText = messageText;
+    }
+
+    public void setMessageSentTime(LocalDateTime messageSentTime) {
+        this.messageSentTime = messageSentTime;
     }
 
     @Override
